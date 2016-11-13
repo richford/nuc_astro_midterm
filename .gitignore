@@ -1,0 +1,11 @@
+.ipynb_checkpoints
+*.bbl
+*.blg
+*.log
+*.out
+*.synctex.gz
+*.top
+*.tui
+*.aux
+*mpgraph.mp
+*Notes.bib
