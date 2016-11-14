@@ -102,12 +102,12 @@ Ignoring shell effects and pairing effects, one may approximate the binding ener
 
 The volume and surface terms are based on the strong nuclear force, so they should remain unchanged in the parallel universe. Using one popular set of values for the Weizs\"acker coefficients\cite{wong1990introductory}, we may take
 \begin{equation}
-	a_V = 16 \; \text{MeV} \\
-	a_S = 17 \; \text{MeV}.
+	a_V = 15.5 \; \text{MeV} \\
+	a_S = 16.8 \; \text{MeV}.
 \end{equation}
-Similarly, the symmetry term is not based on the fundamental forces but rather on the Pauli exclusion principle. So we may use the value of $a_{\text{sym}} = 25 \; \text{MeV}$ to be the same as in our universe.\cite{wong1990introductory}
+Similarly, the symmetry term is not based on the fundamental forces but rather on the Pauli exclusion principle. So we may use the value of $a_{\text{sym}} = 23 \; \text{MeV}$ to be the same as in our universe.\cite{wong1990introductory}
 
-In our universe, $a_C = 0.6 \; \text{MeV}$. We can approximate $a_C$ by equating it with the energy of a charged sphere,
+In our universe, $a_C = 0.72 \; \text{MeV}$. We can approximate $a_C$ by equating it with the energy of a charged sphere,
 \begin{equation}
 	\frac{3}{5} \frac{Z^2 e^2}{4 \pi \epsilon_0 R} = 
 	\frac{3}{5} \frac{Z^2 \alpha \hbar c}{R}
@@ -120,7 +120,7 @@ So if the value of the fine structure constant were reduced by one-half, then th
 	\quad \Longrightarrow \quad
 	a_C \rightarrow \widetilde{a}_C = \frac{a_C}{2}.
 \end{equation}
-Thus, in the parallel universe, we have $\widetilde{a}_C = 0.3 \; \text{MeV}$.
+Thus, in the parallel universe, we have $\widetilde{a}_C = 0.36 \; \text{MeV}$.
 
 To gain intuition about the differences between our universes, I plot the nuclide valley of stability by plotting a contour of the neutron and proton drip lines using the mass formula in Eq\eqref{eq:weizsacker}. The drip lines will be determined by the point at which the separation energies $S_p$ and $S_n$ vanish,
 \begin{align}
@@ -156,7 +156,7 @@ Solving Eq\eqref{eq:constraint} for $Z$ yields
 \end{equation}
 and inserting this into Eq\eqref{eq:weizsacker} yields an equation for the binding energy as a function of $A$ only. I then solve this equation numerically to find $A_\text{max}$, the nucleon number that maximizes the binding energy per nucleon $E_b(A) / A$.\cite{jupyter_notebook}. This yields the $A$ value of the most stable nucleus.
 
-In our universe, using the Weizs\"acker formula, the most stable nucleus has $(A, Z) = (67, 31)$ with a binding energy per nucleon of 9.62 MeV. In ``their" universe, the most stable nucleus has $(A, Z) = (117, 55)$ with a binding energy per nucleon of 10.88 MeV. In Figure \ref{fig:binding_energy}, I plot the binding energy per nucleon as a function of $A = N_\text{optimal} + Z_\text{optimal}$. Because of the reduction in Coulomb repulsion in the parallel universe, $A_\text{max}^{(\widetilde{\alpha})} > A_\text{max}^{(\alpha)}$.
+In our universe, using the Weizs\"acker formula, the most stable nucleus has $(A, Z) = (57, 26)$ with a binding energy per nucleon of 8.82 MeV. In ``their" universe, the most stable nucleus has $(A, Z) = (98, 45)$ with a binding energy per nucleon of 10.13 MeV. In Figure \ref{fig:binding_energy}, I plot the binding energy per nucleon as a function of $A = N_\text{optimal} + Z_\text{optimal}$. Because of the reduction in Coulomb repulsion in the parallel universe, $A_\text{max}^{(\widetilde{\alpha})} > A_\text{max}^{(\alpha)}$.
 
 \begin{figure}[h!]
 	\centering
@@ -313,25 +313,37 @@ In our universe, in the core of the sun, the p+p rate is $r_{pp} \sim 0.5 \times
 \begin{equation}
     \widetilde{r}_{pp} = \frac{6.34 \times 10^9}{\text{cm}^3 \; \text{sec}}.
 \end{equation}
-Since this is the main reaction that produces neutrinos, we can expect the same rate for solar neutrino production. In addition to the change in emission rate, the spectrum of solar neutrinos will narrow to accommodate the larger neutron-proton mass difference. The allowed energies for p+p neutrinos are $0 \le E_\nu \le Q$, where
+
+In addition to the change in emission rate, the spectrum of solar neutrinos will narrow to accommodate the larger neutron-proton mass difference. The allowed energies for p+p neutrinos are $0 \le E_\nu \le Q$, where
 \begin{align}
 	Q &= 2 m_p - m_D = 2 m_p - m_n - m_p + B(1, 1) \\
 	&= B(1, 1) - \Delta \widetilde{m}.
 \end{align}
 With $N = 1$ and $Z = 1$ for the deuteron, the Coulomb and asymmetry terms drop out from the Weizs\"acker mass formula in Eq\eqref{eq:weizsacker} so the contribution to $Q$ from the binding energy of the deuteron is the same in both universes. The narrowing of the neutrino spectrum in the parallel universe is due entirely to the increase in $\Delta \widetilde{m}$.
 
-Similarly, the time scale for burning hydrogen in the parallel universe's sun is\cite{HaxtonLectureNotes}
+We note here that this analysis depends on how one defines the $Q$ value. If we define
+\begin{align}
+	Q &= 2 m_p - m_D - m_e = 2 m_p - m_n - m_p + B(1, 1) - m_e \\
+	&= B(1, 1) - \Delta \widetilde{m} - m_e,
+\end{align}
+then we get a negative $Q$ value ($Q \approx - 311 \; \text{keV}$) for the reaction $p + p \rightarrow d + e^+ + \nu_e$. So it appears that the $p+p$ reaction is not allowed, even with the addition of the sun's $\sim 6$ keV thermal energy. Then the dominant neutrino producing reaction will be the pep reaction,
+\begin{equation}
+	p + e^- + p \rightarrow d + \nu_e.
+\end{equation}
+In our universe, this reaction accounts for only 0.25\% of solar neutrino production. In the parallel universe it will be the dominant source. In this paper, I assume that the analysis performed for the p+p reaction will still hold (qualitatively) for the pep reaction. That is, the lowered Coulomb barrier will increase the reaction rate. The proof will look slightly different since pep is a three-body reaction. I leave this as an exercise to the reader.
+
+To estimate the effect on the lifetime of the sun, I assume that we are still dealing with the p+p reaction. Then the time scale for burning hydrogen in the parallel universe's sun is\cite{HaxtonLectureNotes}
 \begin{equation}
     \widetilde{\tau}_\text{sun} = \frac{\tau_\text{sun}}{126.75}
     = \frac{8.6 \; \text{billion years}}{126.75}
     = 67.85 \; \text{million years}.
     \label{eq:tau_sun_ratio}
 \end{equation}
-From Eqs\eqref{eq:rpp_ratio}-\eqref{eq:tau_sun_ratio}, we see that the lowering of the Coulomb barrier in the parallel universe led to an increase in the p+p cross-section and therefore an increase reaction rate for the p+p reaction and the creation of solar $\nu_e$ neutrinos. As a result, the parallel universe's sun burns out faster, with a lifetime of only 67.85 million years.
+From Eqs\eqref{eq:rpp_ratio}-\eqref{eq:tau_sun_ratio}, we see that the lowering of the Coulomb barrier in the parallel universe leads to an increase in the cross-section and therefore an increase reaction rate for the p+p reaction and the creation of solar $\nu_e$ neutrinos. As a result, the parallel universe's sun burns out faster, with a lifetime of only 67.85 million years. Obviously, the switch to the pep reaction as the main neutrino source obviates this lifetime estimate. The qualitative behavior is however the same.
 
 \section{\label{sec:conclusion}Conclusion}
 
-The reduction of the fine structure constant in the parallel universe has some striking effects. In section \ref{sec:masses}, I used the Weizs\"acker mass formula to show that the reduction in proton charge favors stable nuclei with more symmetric neutron and proton numbers. It brings the valley of stability closer to the $N = Z$ line and makes larger nuclei more stable. In section \ref{sec:bbn}, I discussed implications for BBN and showed that the larger neutron-proton mass difference led to an accelerated decay of the neutron fraction before neutron-proton freeze-out. This in turn led to a lower abundance of ${}^4\text{He}$ than in our universe. Lastly, in section \ref{sec:neutrinos}, I showed that the reduced Coulomb barrier in the parallel universe led to a solar p+p reaction rate that is two orders of magnitude larger than that of our universe. Since this is the primary source of solar neutrinos, the solar neutrino emission follows the same increase. With a higher reaction rate, the parallel universe's sun's lifetime is reduced by two orders of magnitude. So while the parallel universe is compelling and worth further study any plans for contacting ``Earth 2" are hopeless since their sun burned out long ago.
+The reduction of the fine structure constant in the parallel universe has some striking effects. In section \ref{sec:masses}, I used the Weizs\"acker mass formula to show that the reduction in proton charge favors stable nuclei with more symmetric neutron and proton numbers. It brings the valley of stability closer to the $N = Z$ line and makes larger nuclei more stable. In section \ref{sec:bbn}, I discussed implications for BBN and showed that the larger neutron-proton mass difference led to an accelerated decay of the neutron fraction before neutron-proton freeze-out. This in turn led to a lower abundance of ${}^4\text{He}$ than in our universe. Lastly, in section \ref{sec:neutrinos}, I showed that the reduced Coulomb barrier in the parallel universe led to a solar p+p reaction rate that is two orders of magnitude larger than that of our universe. I then argued that the negative $Q$ value of this reaction means that p+p will no longer be the main source of solar neutrinos. Instead the pep reaction will dominate neutrino production. However, I argued that the increase in the reaction rate would still hold for the pep reaction.
 
 \bibliographystyle{apsrev4-1}
 \bibliography{midterm} 
